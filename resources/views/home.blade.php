@@ -17,8 +17,10 @@
 
 <body>
 
-    <strong>test html</strong>
-
+    @foreach ($movies as $movie)
+        <li> {{ $movie->title }} </li>
+    @endforeach
+    
 </body>
 
 </html>
