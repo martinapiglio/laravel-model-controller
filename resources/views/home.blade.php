@@ -17,10 +17,50 @@
 
 <body>
 
-    @foreach ($movies as $movie)
-        <li> {{ $movie->title }} </li>
-    @endforeach
+    <div class="container py-4">
+
+        <h1 class="pb-3">Movies</h1>
+
+        <table class="table">
     
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Movie Title</th>
+                    <th scope="col">Movie Original Title</th>
+                    <th scope="col">Nationality</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Vote</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                
+                @foreach ($movies as $movie)
+                    <tr>
+                        <td>
+                           <strong> {{ $movie->title }} </strong>  
+                        </td>
+                        <td>
+                            {{ $movie->original_title }} 
+                        </td>
+                        <td class="text-capitalize">
+                            {{ $movie->nationality }} 
+                        </td>
+                        <td>
+                            {{ $movie->date }} 
+                        </td>
+                        <td>
+                            {{ $movie->vote }} 
+                        </td>
+                    </tr>
+                @endforeach
+              
+            </tbody>
+
+        </table>
+
+    </div>
+
 </body>
 
 </html>
